@@ -193,8 +193,6 @@ def main():
     Main function
     """
 
-    puzzle_list = puzzles_from_file()
-
     puzzle = [[0, 7, 0, 0, 0, 0, 6, 0, 8],
               [0, 5, 0, 0, 4, 0, 0, 0, 0],
               [3, 0, 0, 0, 0, 6, 0, 0, 0],
@@ -204,9 +202,10 @@ def main():
               [0, 0, 0, 3, 0, 0, 0, 0, 1],
               [0, 0, 0, 5, 0, 0, 0, 7, 3],
               [0, 0, 0, 2, 9, 4, 0, 0, 0]]
-
     pprint.pprint(solver(puzzle))
-    # pprint.pprint(solver(puzzle_list[0]))
+
+    for puzzle in puzzles_from_file("sudoku.txt"):
+        pprint.pprint(solver(puzzle))
 
 
 if __name__ == "__main__":
